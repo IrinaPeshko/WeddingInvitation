@@ -9,7 +9,7 @@ body {
 }
 
 .font-esthetic {
-    font-family: 'Sacramento', cursive !important;
+    font-family: "Great Vibes", cursive !important;
 }
 
 .font-arabic {
@@ -17,11 +17,9 @@ body {
 }
 
 .img-crop {
-    width: 14rem;
-    height: 14rem;
+    width: 18rem;
     position: relative;
     overflow: hidden;
-    border-radius: 50%;
 }
 
 .img-crop>img {
@@ -51,6 +49,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: 1056 !important;
+    background-color: #D89E88;
 }
 
 .card-body {
@@ -141,4 +140,19 @@ footer {
 
 .color-theme-black {
     color: black;
+}
+
+.open__invitation {
+    background-color: #fff4e0;
+    border: 0px;
+}
+
+.progress-bar {
+    background-color: #dd7156 !important; 
+}  
+
+@media (max-width: 768px) {
+    .img-crop {
+        width: 12rem;
+    }
 }
