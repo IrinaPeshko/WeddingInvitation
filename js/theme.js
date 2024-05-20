@@ -46,6 +46,11 @@ export const theme = (() => {
                 element.classList.add('btn-outline-dark');
             }
         });
+        const timers = document.querySelectorAll('.time-circle');
+        timers.forEach(timer => {
+            timer.classList.remove('dark');
+            timer.classList.add('light');
+        });
     };
 
     const onDark = () => {
@@ -85,6 +90,11 @@ export const theme = (() => {
                 element.classList.remove('btn-outline-dark');
                 element.classList.add('btn-outline-light');
             }
+        });
+        const timers = document.querySelectorAll('.time-circle');
+        timers.forEach(timer => {
+            timer.classList.remove('light');
+            timer.classList.add('dark');
         });
     };
 

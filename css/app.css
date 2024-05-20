@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
 html {
     scroll-behavior: smooth !important;
     scrollbar-width: none !important;
@@ -62,6 +64,34 @@ body {
     border-radius: 1.4rem;
     opacity: 0.75;
     box-sizing: content-box;
+}
+
+.text-invitation {
+    font-family: "Playfair Display", serif;
+}
+
+.text-invitation-body {
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+    text-align: unset;
+    margin-bottom: 20px;
+}
+
+.address {
+    font-family: "Playfair Display", serif;
+}
+
+.address-title {
+    font-family: "Playfair Display", serif;
+}
+
+.map {
+    width: 90%;
+}
+
+.welcome-title {
+    margin: 20px;
 }
 
 @keyframes scroll {
@@ -148,11 +178,97 @@ footer {
 }
 
 .progress-bar {
-    background-color: #dd7156 !important; 
-}  
+    background-color: #dd7156 !important;
+}
+
+/* .first-page {
+    background-image: url("../assets/images/proposel.jpeg");
+    background-repeat: no-repeat;
+    box-sizing: inherit;
+} */
+
+.proposale-image {
+    position: relative;
+    overflow: hidden;
+    width: 35rem;
+
+    img {
+        width: 35rem;
+    }
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.time-circle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    padding: 7px;
+}
+
+.time-circle.light {
+    background-color: #f8f9fa;
+    color: black;
+    border: 1px solid #d89f8848;
+    font-size: 15px;
+}
+
+.time-circle.dark {
+    background-color: #343a40;
+    color: white;
+    font-size: 16px;
+}
+
+.time-circle label {
+    margin-top: 14px;
+    font-size: 16px;
+}
+
+.text-invitation {}
+
+.calendar-container {
+    /* background-image: url("../assets//images/background.webp"); */
+    display: flex;
+    justify-content: center;
+    max-height: 450px;
+    align-items: center;
+}
+
+.calendar-image {
+    margin: auto;
+    max-height: 450px;
+    /* width: 90%; */
+}
 
 @media (max-width: 768px) {
     .img-crop {
         width: 12rem;
+    }
+
+    .proposale-image {
+        position: relative;
+        overflow: hidden;
+        width: 18rem;
+
+        img {
+            width: 18rem;
+        }
+    }
+
+    .calendar-image {
+        margin: auto;
+        /* max-height: 450px; */
+        width: 90%;
     }
 }
