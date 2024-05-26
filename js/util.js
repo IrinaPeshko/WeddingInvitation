@@ -83,21 +83,6 @@ export const util = (() => {
         document.getElementById('show-modal-image').src = img.src;
         (new bootstrap.Modal('#modal-image')).show();
     };
-
-    const countDownDate = () => {
-        const until = document.getElementById('count-down').getAttribute('data-time').replace(' ', 'T');
-        const count = (new Date(until)).getTime();
-
-        setInterval(() => {
-            const distance = Math.abs(count - (new Date()).getTime());
-
-            document.getElementById('day').innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
-            document.getElementById('hour').innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            document.getElementById('minute').innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            document.getElementById('second').innerText = Math.floor((distance % (1000 * 60)) / 1000);
-        }, 1000);
-    };
-
     const copy = async (button, message, timeout = 1500) => {
         try {
             await navigator.clipboard.writeText(button.getAttribute('data-copy'));
@@ -124,7 +109,7 @@ export const util = (() => {
     const animation = () => {
         const duration = 15 * 1000;
         const animationEnd = Date.now() + duration;
-        const colors = ["#FFC0CB", "#FF1493", "#C71585"];
+        const colors = ["#FFC0CB", "#ffb1c1", "#ffb18f"];
 
         const randomInRange = (min, max) => {
             return Math.random() * (max - min) + min;
@@ -156,9 +141,7 @@ export const util = (() => {
                 });
             });
 
-            if (timeLeft > 0) {
                 requestAnimationFrame(frame);
-            }
         })();
     };
 
@@ -194,7 +177,6 @@ export const util = (() => {
         }
 
         opacity('welcome', 0.025);
-        countDownDate();
         audio.showButton();
         document.getElementById('button-theme').style.display = 'block';
 
@@ -215,7 +197,6 @@ export const util = (() => {
         animate,
         animation,
         escapeHtml,
-        countDownDate,
         disableButton,
     }
 })();
