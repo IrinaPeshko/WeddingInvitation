@@ -17,6 +17,16 @@ window.pagination = pagination;
 document.addEventListener("DOMContentLoaded", function () {
   const targetDate = new Date("August 3, 2024 15:00:00").getTime();
 
+  function getDeclension(number, one, two, five) {
+    if (number % 10 == 1 && number % 100 != 11) {
+      return one;
+    } else if ([2, 3, 4].indexOf(number % 10) >= 0 && [12, 13, 14].indexOf(number % 100) < 0) {
+      return two;
+    } else {
+      return five;
+    }
+  }
+
   const countdownFunction = setInterval(function () {
     const now = new Date().getTime();
     const distance = targetDate - now;
@@ -28,10 +38,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    document.getElementById("days").innerText = days + " дней";
-    document.getElementById("hours").innerText = hours + " часов";
-    document.getElementById("minutes").innerText = minutes + " минут";
-    document.getElementById("seconds").innerText = seconds + " секунд";
+    document.getElementById("days").innerText = days + "\n " + getDeclension(days, "день", "дня", "дней");
+    document.getElementById("hours").innerText = hours + "\n " + getDeclension(hours, "час", "часа", "часов");
+    document.getElementById("minutes").innerText = minutes + "\n " + getDeclension(minutes, "минута", "минуты", "минут");
+    document.getElementById("seconds").innerText = seconds + "\n " + getDeclension(seconds, "секунда", "секунды", "секунд");
 
     if (distance < 0) {
       clearInterval(countdownFunction);

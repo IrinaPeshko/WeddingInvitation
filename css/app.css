@@ -16,6 +16,10 @@ body {
 
 }
 
+.btn {
+    color:#343a40
+}
+
 .font-arabic {
     font-family: 'Noto Naskh Arabic', serif !important;
 }
@@ -70,6 +74,7 @@ body {
 
 .text-invitation {
     font-family: "Playfair Display", serif;
+    color:#343a40
 }
 
 .text-invitation-body {
@@ -163,7 +168,7 @@ footer {
 }
 
 .bg-theme-dark {
-    background-color: var(--bs-gray-800);
+    background-color: var(--bs-gray-100);
 }
 
 .color-theme-white {
@@ -171,7 +176,7 @@ footer {
 }
 
 .color-theme-black {
-    color: black;
+    color: white;
 }
 
 .open__invitation {
@@ -202,7 +207,7 @@ footer {
 .countdown-timer {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
     padding: 20px;
 }
 
@@ -211,8 +216,8 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     color: white;
     font-size: 20px;
@@ -274,7 +279,7 @@ footer {
 }
 
 .gallery__container {
-    max-width: 700px;
+    max-width: 700px !important; 
 }
 
 .details_phone {
@@ -296,4 +301,66 @@ footer {
 .gift_img {
     width: 100px;
     padding: 10px;
+}
+
+.details_wish {
+    margin-bottom: 40px;
+}
+
+h1, h2, h3, h4, h5, p {
+    color:#343a40 !important;
+} 
+
+.container {
+    max-width: 90%;
+}
+
+.finger-animation {
+    width: 35px; /* Установите ширину под размер вашего изображения */
+    height: 55px; /* Установите высоту под размер вашего изображения */
+    position: relative;
+}
+
+.finger-animation>.scroll-animation {
+    width: 100%; /* Изображение должно занимать всю ширину родительского элемента */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-name: scroll;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes scroll {
+    0% {
+        top: 0;
+        opacity: 1;
+    }
+    50% {
+        top: 10px;
+        opacity: 0.5;
+    }
+    100% {
+        top: 20px;
+        opacity: 0;
+    }
+}
+
+.open__invitation {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
 }

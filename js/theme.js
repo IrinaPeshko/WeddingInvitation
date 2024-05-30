@@ -43,7 +43,7 @@ export const theme = (() => {
 
             if (element.classList.contains('btn-outline-light')) {
                 element.classList.remove('btn-outline-light');
-                element.classList.add('btn-outline-dark');
+                element.classList.add('btn-outline-light');
             }
         });
         const timers = document.querySelectorAll('.time-circle');
@@ -54,7 +54,7 @@ export const theme = (() => {
     };
 
     const onDark = () => {
-        const elements = document.querySelectorAll('.text-dark, .btn-theme-dark, .bg-light, .bg-white, .bg-theme-light, .color-theme-white, .btn-outline-dark');
+        const elements = document.querySelectorAll('.text-dark, .btn-theme-dark, .bg-light, .bg-white, .bg-theme-light, .color-theme-white, .btn-outline-light');
         elements.forEach((element) => {
             if (element.classList.contains('text-dark')) {
                 element.classList.remove('text-dark');
@@ -86,8 +86,8 @@ export const theme = (() => {
                 element.classList.add('color-theme-black');
             }
 
-            if (element.classList.contains('btn-outline-dark')) {
-                element.classList.remove('btn-outline-dark');
+            if (element.classList.contains('btn-outline-light')) {
+                element.classList.remove('btn-outline-light');
                 element.classList.add('btn-outline-light');
             }
         });

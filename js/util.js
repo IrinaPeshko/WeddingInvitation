@@ -167,18 +167,13 @@ export const util = (() => {
             zIndex: 1057
         });
 
-        theme.check();
         AOS.init();
         audio.play();
         document.querySelector('body').style.overflowY = 'scroll';
 
-        if (localStorage.getItem('alertClosed')) {
-            document.getElementById('information').style.display = 'none';
-        }
-
         opacity('welcome', 0.025);
         audio.showButton();
-        document.getElementById('button-theme').style.display = 'block';
+        // document.getElementById('button-theme').style.display = 'block';
 
         const token = document.querySelector('body').getAttribute('data-key');
         const status = await storeConfig(token);
