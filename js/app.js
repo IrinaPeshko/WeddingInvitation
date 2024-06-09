@@ -1,16 +1,12 @@
 import { util } from "./util.js";
-import { like } from "./like.js";
 import { theme } from "./theme.js";
 import { audio } from "./audio.js";
-import { comment } from "./comment.js";
 import { progress } from "./progress.js";
 import { pagination } from "./pagination.js";
 
 window.util = util;
-window.like = like;
 window.theme = theme;
 window.audio = audio;
-window.comment = comment;
 window.progress = progress;
 window.pagination = pagination;
 
@@ -40,8 +36,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById("days").innerText = days + "\n " + getDeclension(days, "день", "дня", "дней");
     document.getElementById("hours").innerText = hours + "\n " + getDeclension(hours, "час", "часа", "часов");
-    document.getElementById("minutes").innerText = minutes + "\n " + getDeclension(minutes, "минута", "минуты", "минут");
-    document.getElementById("seconds").innerText = seconds + "\n " + getDeclension(seconds, "секунда", "секунды", "секунд");
+    document.getElementById("minutes").innerText = minutes + "\n " + getDeclension(minutes, "минуту", "минуты", "минут");
+    document.getElementById("seconds").innerText = seconds + "\n " + getDeclension(seconds, "секунду", "секунды", "секунд");
 
     if (distance < 0) {
       clearInterval(countdownFunction);

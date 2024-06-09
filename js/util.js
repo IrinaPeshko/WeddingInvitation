@@ -1,6 +1,5 @@
 import { audio } from './audio.js';
 import { theme } from './theme.js';
-import { comment } from './comment.js';
 import { storage } from './storage.js';
 import { request, HTTP_GET } from './request.js';
 
@@ -179,7 +178,6 @@ export const util = (() => {
         const status = await storeConfig(token);
         if (status === 200) {
             animation();
-            comment.comment();
         }
     };
 

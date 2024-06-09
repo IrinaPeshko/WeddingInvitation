@@ -23,7 +23,6 @@ export const pagination = (() => {
         button.disabled = true;
         button.innerHTML = `${type == 'Next' ? type : ''}<span class="spinner-border spinner-border-sm mx-1"></span>${type == 'Previous' ? type : ''}`;
 
-        await comment.comment();
         document.getElementById('comments').scrollIntoView({ behavior: 'smooth' });
 
         button.disabled = false;

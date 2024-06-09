@@ -208,7 +208,8 @@ footer {
     display: flex;
     justify-content: center;
     gap: 10px;
-    padding: 20px;
+    padding: 0px;
+    margin: 15px 0;
 }
 
 .time-circle {
@@ -228,7 +229,7 @@ footer {
     background-color: #f8f9fa;
     color: black;
     border: 1px solid #d89f8848;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .time-circle.dark {
@@ -253,6 +254,7 @@ footer {
 .calendar-image {
     margin: auto;
     max-height: 450px;
+
     /* width: 90%; */
 }
 
@@ -363,4 +365,14 @@ h1, h2, h3, h4, h5, p {
     100% {
         transform: scale(1);
     }
+}
+
+.timer-container {
+    /* background-color: #ffffff; */
+    border: 2px solid #e6e6e6;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 20px;
+    box-shadow: 5px 5px 10px #e6e6e6;
 }

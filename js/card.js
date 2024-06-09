@@ -86,18 +86,6 @@ export const card = (() => {
         </div>`;
     };
 
-    const renderTracker = (comment) => {
-        if (comment.ip === undefined || comment.user_agent === undefined || comment.is_admin) {
-            return '';
-        }
-
-        return `
-        <div class="p-2 my-2 rounded-3 border">
-            <p class="text-${theme.isDarkMode('light', 'dark')} mb-1 mx-0 mt-0 p-0" style="font-size: 0.7rem;" id="ip-${comment.uuid}"><i class="fa-solid fa-location-dot me-1"></i>${util.escapeHtml(comment.ip)} ${tracker.has(comment.ip) ? `<strong>${tracker.get(comment.ip)}</strong>` : `<span class="mb-1 placeholder col-2 rounded-3"></span>`}</p>
-            <p class="text-${theme.isDarkMode('light', 'dark')} m-0 p-0" style="font-size: 0.7rem;"><i class="fa-solid fa-mobile-screen-button me-1"></i>${util.escapeHtml(comment.user_agent)}</p>
-        </div>`;
-    };
-
     const renderHeader = (is_parent) => {
         if (is_parent) {
             return `class="card-body bg-theme-${theme.isDarkMode('dark', 'light')} shadow p-3 mx-0 mt-0 mb-3 rounded-4" data-parent="true"`;
@@ -118,21 +106,9 @@ export const card = (() => {
         return `<strong>${util.escapeHtml(comment.name)}</strong>`;
     };
 
-    const renderBody = (comment, is_parent) => {
-        return `
-        <div class="d-flex flex-wrap justify-content-between align-items-center">
-            <p class="text-${theme.isDarkMode('light', 'dark')} text-truncate m-0 p-0" style="font-size: 0.95rem;">${renderTitle(comment, is_parent)}</p>
-            <small class="text-${theme.isDarkMode('light', 'dark')} m-0 p-0" style="font-size: 0.75rem;">${comment.created_at}</small>
-        </div>
-        <hr class="text-${theme.isDarkMode('light', 'dark')} my-1">
-        <p class="text-${theme.isDarkMode('light', 'dark')} mt-0 mb-1 mx-0 p-0" style="white-space: pre-wrap !important" id="content-${comment.uuid}">${convertMarkdownToHTML(util.escapeHtml(comment.comment))}</p>`;
-    };
-
     const renderContent = (comment, is_parent) => {
         return `
         <div ${renderHeader(is_parent)} id="${comment.uuid}">
-            ${renderBody(comment, is_parent)}
-            ${renderTracker(comment)}
             ${renderButton(comment)}
             ${comment.comments.map((c) => renderContent(c, false)).join('')}
         </div>`;
